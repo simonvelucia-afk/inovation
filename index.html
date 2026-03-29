@@ -257,6 +257,25 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease, transform .65s ease}
     .reveal.visible{opacity:1;transform:translateY(0)}
 
+    
+    .hero-logo a{
+      display:inline-block;
+    }
+    .hero-logo img{
+      transition:transform .25s ease, filter .25s ease;
+    }
+    .hero-logo a:hover img{
+      transform:scale(1.02);
+      filter:drop-shadow(0 30px 80px rgba(0,0,0,.7));
+    }
+    .brand{
+      text-decoration:none;
+      transition:opacity .2s ease;
+    }
+    .brand:hover{
+      opacity:.82;
+    }
+
     @media (max-width:980px){
       .hero-grid,.grid-2,.grid-3{grid-template-columns:1fr}
       .hero-media{min-height:320px}
@@ -288,12 +307,14 @@
 </head>
 <body>
   <section class="hero-logo">
-    <img src="images/Logo_Innovation_Modulimo.png" alt="MODULIMO">
+    <a href="https://www.modulimo.com" target="_blank" rel="noopener" aria-label="Aller à Modulimo">
+      <img src="images/Logo_Innovation_Modulimo.png" alt="MODULIMO">
+    </a>
   </section>
 
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand">MODULIMO</div>
+      <a href="https://www.modulimo.com" class="brand" target="_blank" rel="noopener">MODULIMO</a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
