@@ -201,15 +201,135 @@
     .media-dashboard{
       background:#081018;
       overflow:hidden;
+      padding:14px;
+    }
+    .dashboard-shell{
+      height:100%;
+      min-height:260px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:#050b11;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.03), 0 18px 40px rgba(0,0,0,.26);
+    }
+    .dashboard-toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .dashboard-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.28);
+      display:inline-block;
+      margin-right:6px;
+    }
+    .dashboard-actions{
+      margin-left:auto;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .dashboard-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:0 12px;
+      border-radius:999px;
+      border:1px solid rgba(103,240,173,.22);
+      background:rgba(103,240,173,.09);
+      color:#dff8eb;
+      font-size:.84rem;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .dashboard-link:hover{
+      background:rgba(103,240,173,.15);
+    }
+    .dashboard-fullscreen-btn{
+      font:inherit;
     }
     .media-dashboard iframe{
-      width:140%;
-      height:140%;
+      width:100%;
+      height:280px;
       border:none;
-      transform:scale(.7);
-      transform-origin:top left;
-      pointer-events:none;
-      filter:brightness(.98) contrast(1.02);
+      display:block;
+      pointer-events:auto;
+      background:#081018;
+    }
+    .dashboard-modal{
+      position:fixed;
+      inset:0;
+      z-index:120;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:rgba(2,6,10,.78);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+    .dashboard-modal.is-open{
+      display:flex;
+    }
+    .dashboard-modal-card{
+      width:min(1400px, 96vw);
+      height:min(92vh, 920px);
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:#050b11;
+      box-shadow:0 40px 120px rgba(0,0,0,.5);
+      display:flex;
+      flex-direction:column;
+    }
+    .dashboard-modal-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .dashboard-modal-top strong{
+      font-size:.92rem;
+      letter-spacing:.02em;
+    }
+    .dashboard-modal-actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .dashboard-modal iframe{
+      width:100%;
+      height:100%;
+      border:none;
+      flex:1;
+      background:#081018;
+    }
+    .dashboard-close{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font:inherit;
+      cursor:pointer;
+    }
+    .dashboard-close:hover{
+      background:rgba(255,255,255,.08);
     }
 
 
@@ -354,7 +474,7 @@
         <a href="#living"><span data-lang="fr">Habitation</span><span data-lang="en">Living</span></a>
         <a href="#family"><span data-lang="fr">Familles</span><span data-lang="en">Families</span></a>
         <a href="#mobility"><span data-lang="fr">Mobilité</span><span data-lang="en">Mobility</span></a>
-        <a href="#lab"><span data-lang="fr">Laboratoire</span><span data-lang="en">Lab</span></a>
+        <a href="#mobility"><span data-lang="fr">Laboratoire</span><span data-lang="en">Lab</span></a>
         <button class="lang-btn" data-set-lang="fr" aria-label="Afficher en français">FR</button>
         <button class="lang-btn" data-set-lang="en" aria-label="Display in English">EN</button>
       </nav>
@@ -589,15 +709,30 @@
         </article>
         <article class="panel">
           <div class="media media-dashboard">
-            <iframe
-              src="https://simonvelucia-afk.github.io/modulimo-dashboard/"
-              loading="lazy"
-              title="Dashboard MODULIMO">
-            </iframe>
+            <div class="dashboard-shell">
+              <div class="dashboard-toolbar">
+                <span class="dashboard-dot"></span>
+                <span class="dashboard-dot"></span>
+                <span class="dashboard-dot"></span>
+                <div class="dashboard-actions">
+                  <a class="dashboard-link" href="https://simonvelucia-afk.github.io/modulimo-dashboard/" target="_blank" rel="noopener">
+                    <span data-lang="fr">Ouvrir la démo</span><span data-lang="en">Open demo</span>
+                  </a>
+                  <button class="dashboard-link dashboard-fullscreen-btn" type="button" data-dashboard-fullscreen="https://simonvelucia-afk.github.io/modulimo-dashboard/">
+                    <span data-lang="fr">Plein écran</span><span data-lang="en">Fullscreen</span>
+                  </button>
+                </div>
+              </div>
+              <iframe
+                src="https://simonvelucia-afk.github.io/modulimo-dashboard/"
+                loading="lazy"
+                title="Dashboard MODULIMO">
+              </iframe>
+            </div>
           </div>
           <div class="card-pad">
             <h3><span data-lang="fr">Interface de pilotage</span><span data-lang="en">Driving interface</span></h3>
-            <p class="section-text"><span data-lang="fr">Le dashboard MODULIMO illustre une première direction d’interface pour le pilotage, l’assistance et la supervision des futurs vélomobiles.</span><span data-lang="en">The MODULIMO dashboard illustrates an initial interface direction for driving, assistance, and supervision of future velomobiles.</span></p>
+            <p class="section-text"><span data-lang="fr">Le dashboard MODULIMO illustre une première direction d’interface pour le pilotage, l’assistance et la supervision des futurs vélomobiles. La démo peut être ouverte séparément pour une consultation en plein écran.</span><span data-lang="en">The MODULIMO dashboard illustrates an initial interface direction for driving, assistance, and supervision of future velomobiles. The demo can be opened separately for full-screen viewing.</span></p>
           </div>
         </article>
         <article class="panel">
@@ -682,6 +817,24 @@
     </div>
   </section>
 
+
+  <div class="dashboard-modal" id="dashboardModal" aria-hidden="true">
+    <div class="dashboard-modal-card">
+      <div class="dashboard-modal-top">
+        <strong><span data-lang="fr">Dashboard MODULIMO — Démo de pilotage</span><span data-lang="en">MODULIMO Dashboard — Driving demo</span></strong>
+        <div class="dashboard-modal-actions">
+          <a class="dashboard-link" id="dashboardExternalLink" href="https://simonvelucia-afk.github.io/modulimo-dashboard/" target="_blank" rel="noopener">
+            <span data-lang="fr">Ouvrir dans un onglet</span><span data-lang="en">Open in tab</span>
+          </a>
+          <button class="dashboard-close" type="button" id="dashboardClose">
+            <span data-lang="fr">Fermer</span><span data-lang="en">Close</span>
+          </button>
+        </div>
+      </div>
+      <iframe id="dashboardModalFrame" src="about:blank" loading="lazy" title="Dashboard MODULIMO plein écran"></iframe>
+    </div>
+  </div>
+
   <footer class="footer wrap">
     <div data-lang="fr">Version GitHub Pages, prête à publier sur <strong>https://simonvelucia-afk.github.io/innovation/</strong>.</div>
     <div data-lang="en">GitHub Pages version, ready to publish on <strong>https://simonvelucia-afk.github.io/innovation/</strong>.</div>
@@ -728,6 +881,44 @@
       document.querySelectorAll('#siteNav a').forEach(link => link.addEventListener('click', closeMenu));
       window.addEventListener('resize', function() {
         if (window.innerWidth > 760) closeMenu();
+      });
+
+      const dashboardModal = document.getElementById('dashboardModal');
+      const dashboardModalFrame = document.getElementById('dashboardModalFrame');
+      const dashboardClose = document.getElementById('dashboardClose');
+      const dashboardExternalLink = document.getElementById('dashboardExternalLink');
+
+      function openDashboardModal(url) {
+        if (!dashboardModal || !dashboardModalFrame) return;
+        dashboardModalFrame.src = url;
+        dashboardExternalLink.href = url;
+        dashboardModal.classList.add('is-open');
+        dashboardModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDashboardModal() {
+        if (!dashboardModal || !dashboardModalFrame) return;
+        dashboardModal.classList.remove('is-open');
+        dashboardModal.setAttribute('aria-hidden', 'true');
+        dashboardModalFrame.src = 'about:blank';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('[data-dashboard-fullscreen]').forEach(btn => {
+        btn.addEventListener('click', function() {
+          openDashboardModal(this.getAttribute('data-dashboard-fullscreen'));
+        });
+      });
+
+      if (dashboardClose) dashboardClose.addEventListener('click', closeDashboardModal);
+      if (dashboardModal) {
+        dashboardModal.addEventListener('click', function(e) {
+          if (e.target === dashboardModal) closeDashboardModal();
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeDashboardModal();
       });
 
       const reveals = document.querySelectorAll('.panel, .band, .legal, .closing');
