@@ -332,6 +332,200 @@
       background:rgba(255,255,255,.08);
     }
 
+    .media-building{
+      position:relative;
+      background:#0a1219;
+    }
+    .media-building img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .media-open-btn{
+      position:absolute;
+      top:16px;
+      right:16px;
+      z-index:3;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(127,216,255,.28);
+      background:rgba(8,18,28,.72);
+      color:#eaf3fb;
+      font:inherit;
+      font-weight:700;
+      cursor:pointer;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+    .media-open-btn:hover{
+      background:rgba(8,18,28,.88);
+    }
+    .image-modal{
+      position:fixed;
+      inset:0;
+      z-index:140;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      background:rgba(1,7,10,.84);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+    .image-modal.is-open{
+      display:flex;
+    }
+    .image-modal-card{
+      width:min(1800px, 96vw);
+      height:min(94vh, 1200px);
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:#03080d;
+      box-shadow:0 40px 120px rgba(0,0,0,.55);
+    }
+    .image-modal-card img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      background:#03080d;
+    }
+
+    .premium-image-card{
+      position:relative;
+      margin-top:22px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:#09131b;
+      box-shadow:0 22px 60px rgba(0,0,0,.24);
+    }
+    .premium-image-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.12)),
+        radial-gradient(circle at 50% 100%, rgba(103,240,173,.10), transparent 36%);
+    }
+    .premium-image-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      transform:scale(1.001);
+    }
+    .premium-open-btn{
+      right:18px;
+      bottom:18px;
+      top:auto;
+      background:rgba(6,14,22,.72);
+      border-color:rgba(127,216,255,.22);
+      box-shadow:0 12px 28px rgba(0,0,0,.22);
+    }
+    .premium-open-btn:hover{
+      background:rgba(6,14,22,.92);
+      transform:translateY(-1px);
+    }
+    .image-modal{
+      position:fixed;
+      inset:0;
+      z-index:140;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(8,18,28,.26), rgba(1,7,10,.94)),
+        rgba(1,7,10,.92);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      animation:imageFadeIn .22s ease;
+    }
+    .image-modal.is-open{
+      display:flex;
+    }
+    .image-modal-card{
+      width:min(1880px, 97vw);
+      height:min(95vh, 1240px);
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:#03080d;
+      box-shadow:0 40px 120px rgba(0,0,0,.58);
+      transform:translateY(0) scale(1);
+      animation:imageCardIn .24s ease;
+    }
+    .image-modal-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(103,240,173,.08), transparent 32%);
+      z-index:1;
+    }
+    .image-modal-card img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      background:#03080d;
+      position:relative;
+      z-index:0;
+    }
+    .image-modal-close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      z-index:2;
+      min-height:44px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(8,18,28,.68);
+      color:#fff;
+      font:inherit;
+      font-weight:700;
+      cursor:pointer;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:0 12px 24px rgba(0,0,0,.18);
+    }
+    .image-modal-close:hover{
+      background:rgba(8,18,28,.9);
+    }
+    .image-modal-hint{
+      position:absolute;
+      left:20px;
+      bottom:18px;
+      z-index:2;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(8,18,28,.54);
+      color:#dbe7f2;
+      font-size:.9rem;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+    @keyframes imageFadeIn{
+      from{opacity:0}
+      to{opacity:1}
+    }
+    @keyframes imageCardIn{
+      from{transform:translateY(10px) scale(.985); opacity:.8}
+      to{transform:translateY(0) scale(1); opacity:1}
+    }
+
+
 
     section.block{padding:18px 0}
     .legal{
@@ -637,7 +831,12 @@
         </article>
 
         <article class="panel">
-          <div class="media"><img src="images/immeuble_reve_11%20(1).png" alt="Concept résidentiel Modulimo" /></div>
+          <div class="media media-building">
+            <img src="images/immeuble_reve_11.png" alt="Concept résidentiel Modulimo" />
+            <button class="media-open-btn" type="button" data-image-fullscreen="images/immeuble_reve_11.png">
+              <span data-lang="fr">Voir en pleine page</span><span data-lang="en">View full page</span>
+            </button>
+          </div>
           <div class="card-pad">
             <div class="pill"><span data-lang="fr">Base résidentielle</span><span data-lang="en">Residential base</span></div>
             <p class="section-text">
@@ -754,6 +953,12 @@
         <article class="band">
           <div class="smallcaps"><span data-lang="fr">Rôle stratégique</span><span data-lang="en">Strategic role</span></div>
           <p class="section-text soft"><span data-lang="fr">La mobilité n’est pas présentée comme un élément isolé. Elle constitue une extension naturelle du bâtiment, du logiciel et des services, dans une logique d’intégration verticale rare sur le marché.</span><span data-lang="en">Mobility is not presented as an isolated element. It is a natural extension of the building, software, and services, within a vertically integrated logic that is rare in the market.</span></p>
+          <div class="premium-image-card">
+            <img src="images/iso_concept_ultime.webp" alt="Vélomobile MODULIMO" />
+            <button class="media-open-btn premium-open-btn" type="button" data-image-fullscreen="images/iso_concept_ultime.webp">
+              <span data-lang="fr">Voir en plein écran</span><span data-lang="en">View full screen</span>
+            </button>
+          </div>
         </article>
       </div>
     </section>
@@ -832,6 +1037,17 @@
         </div>
       </div>
       <iframe id="dashboardModalFrame" src="about:blank" loading="lazy" title="Dashboard MODULIMO plein écran"></iframe>
+    </div>
+  </div>
+
+
+  <div class="image-modal" id="imageModal" aria-hidden="true">
+    <div class="image-modal-card">
+      <button class="image-modal-close" type="button" id="imageModalClose">
+        <span data-lang="fr">Fermer</span><span data-lang="en">Close</span>
+      </button>
+      <img id="imageModalTarget" src="" alt="MODULIMO full image view" />
+      <div class="image-modal-hint"><span data-lang="fr">Cliquer à l’extérieur pour fermer</span><span data-lang="en">Click outside to close</span></div>
     </div>
   </div>
 
@@ -918,8 +1134,44 @@
         });
       }
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeDashboardModal();
+        if (e.key === 'Escape') {
+          closeDashboardModal();
+          closeImageModal();
+        }
       });
+
+      const imageModal = document.getElementById('imageModal');
+      const imageModalTarget = document.getElementById('imageModalTarget');
+      const imageModalClose = document.getElementById('imageModalClose');
+
+      function openImageModal(src) {
+        if (!imageModal || !imageModalTarget) return;
+        imageModalTarget.src = src;
+        imageModal.classList.add('is-open');
+        imageModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeImageModal() {
+        if (!imageModal || !imageModalTarget) return;
+        imageModal.classList.remove('is-open');
+        imageModal.setAttribute('aria-hidden', 'true');
+        imageModalTarget.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('[data-image-fullscreen]').forEach(btn => {
+        btn.addEventListener('click', function() {
+          openImageModal(this.getAttribute('data-image-fullscreen'));
+        });
+      });
+
+      if (imageModalClose) imageModalClose.addEventListener('click', closeImageModal);
+      if (imageModal) {
+        imageModal.addEventListener('click', function(e) {
+          if (e.target === imageModal) closeImageModal();
+        });
+      }
 
       const reveals = document.querySelectorAll('.panel, .band, .legal, .closing');
       const observer = new IntersectionObserver((entries) => {
