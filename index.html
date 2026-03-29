@@ -170,19 +170,48 @@
       background:rgba(255,255,255,.03);
       color:var(--muted); font-size:.88rem;
     }
-    .hero-media{
+
+    .hero-media-app{
+      position:relative;
       min-height:470px;
-      background:
-        linear-gradient(180deg, rgba(6,18,26,.05), rgba(6,18,26,.70)),
-        url('images/immeuble_reve_11%20(1).png') center/cover no-repeat;
+      overflow:hidden;
+      border-radius:30px;
+      background:#081018;
     }
-    .hero-note{
-      position:absolute;left:18px;right:18px;bottom:18px;z-index:2;
-      padding:14px 16px;border-radius:18px;
+    .hero-media-app iframe{
+      width:144%;
+      height:144%;
+      border:none;
+      transform:scale(.694);
+      transform-origin:top left;
+      pointer-events:none;
+      filter:brightness(.96) contrast(1.03);
+    }
+    .hero-overlay{
+      position:absolute;
+      left:18px; right:18px; bottom:18px;
+      z-index:2;
+      padding:14px 16px;
+      border-radius:18px;
       background:rgba(8,18,28,.76);
       border:1px solid rgba(255,255,255,.08);
-      color:#d8e6f0; line-height:1.6;
+      color:#d8e6f0;
+      line-height:1.6;
     }
+    .media-dashboard{
+      background:#081018;
+      overflow:hidden;
+    }
+    .media-dashboard iframe{
+      width:140%;
+      height:140%;
+      border:none;
+      transform:scale(.7);
+      transform-origin:top left;
+      pointer-events:none;
+      filter:brightness(.98) contrast(1.02);
+    }
+
 
     section.block{padding:18px 0}
     .legal{
@@ -376,10 +405,16 @@
           </div>
         </div>
 
-        <div class="panel hero-media">
-          <div class="hero-note">
-            <span data-lang="fr">Base résidentielle de référence : architecture contemporaine, noyau central, verdissement, services intégrés, logique familiale assumée et base constructive conçue pour soutenir un déploiement futur.</span>
-            <span data-lang="en">Reference residential base: contemporary architecture, central core, greening, integrated services, a clear family logic, and a construction base designed to support future deployment.</span>
+        <div class="panel hero-media-app">
+          <iframe
+            src="https://cohabitat.modulimo.com/"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+          <div class="hero-overlay">
+            <span data-lang="fr">Plateforme opérationnelle — gestion des ressources et du milieu de vie</span>
+            <span data-lang="en">Operational platform — resource and living environment management</span>
           </div>
         </div>
       </div>
@@ -553,10 +588,16 @@
           </div>
         </article>
         <article class="panel">
-          <div class="media"><img src="images/cockpit.webp" alt="Cockpit du vélomobile" /></div>
+          <div class="media media-dashboard">
+            <iframe
+              src="https://simonvelucia-afk.github.io/modulimo-dashboard/"
+              loading="lazy"
+              title="Dashboard MODULIMO">
+            </iframe>
+          </div>
           <div class="card-pad">
-            <h3><span data-lang="fr">Expérience d’usage</span><span data-lang="en">User experience</span></h3>
-            <p class="section-text"><span data-lang="fr">L’habitacle, l’ergonomie et la protection sont étudiés comme composantes d’une expérience cohérente avec un environnement résidentiel évolué.</span><span data-lang="en">Cabin design, ergonomics, and protection are studied as components of an experience aligned with an advanced residential environment.</span></p>
+            <h3><span data-lang="fr">Interface de pilotage</span><span data-lang="en">Driving interface</span></h3>
+            <p class="section-text"><span data-lang="fr">Le dashboard MODULIMO illustre une première direction d’interface pour le pilotage, l’assistance et la supervision des futurs vélomobiles.</span><span data-lang="en">The MODULIMO dashboard illustrates an initial interface direction for driving, assistance, and supervision of future velomobiles.</span></p>
           </div>
         </article>
         <article class="panel">
