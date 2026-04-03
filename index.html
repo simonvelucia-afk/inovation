@@ -1034,9 +1034,7 @@
         <p class="section-text soft"><span data-lang="fr">La mobilité n’est pas présentée comme un élément isolé. Elle constitue une extension naturelle du bâtiment, du logiciel et des services, dans une logique d’intégration verticale rare sur le marché.</span><span data-lang="en">Mobility is not presented as an isolated element. It is a natural extension of the building, software, and services, within a vertically integrated logic that is rare in the market.</span></p>
         <div class="premium-image-card">
           <img src="images/iso_concept_ultime.webp" alt="Vélomobile MODULIMO" />
-          <button class="media-open-btn premium-open-btn" type="button" data-image-fullscreen="images/iso_concept_ultime.webp">
-            <span data-lang="fr">Voir en plein écran</span><span data-lang="en">View full screen</span>
-          </button>
+
         </div>
       </div>
     </section>
@@ -1298,7 +1296,7 @@
       // ResizeObserver pour les changements de layout
       if (typeof ResizeObserver !== 'undefined') {
         const ro = new ResizeObserver(scaleDashPreview);
-        const wrap = document.getElementById('dashboardPreviewWrap');
+        const wazrap = document.getElementById('dashboardPreviewWrap');
         if (wrap) ro.observe(wrap);
       }
 
