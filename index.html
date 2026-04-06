@@ -1231,12 +1231,13 @@
       }
 
       function applyEsFallback(lang) {
-        // Reset all forced styles first
+        // Reset tous les styles forcés
         document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
           frEl.style.display = '';
         });
         if (lang !== 'es') return;
-        // For each FR element whose parent has no ES sibling → show FR as fallback
+
+        // Pour chaque élément FR dont le parent n'a pas de version ES → afficher en fallback
         document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
           var parent = frEl.parentElement;
           if (!parent) return;
@@ -1258,10 +1259,8 @@
         root.classList.add('lang-' + lang);
         root.setAttribute('lang', lang);
         localStorage.setItem('modulimo_lang', lang);
-        requestAnimationFrame(function() {
-          applyEsFallback(lang);
-          updateActiveLangBtn(lang);
-        });
+        applyEsFallback(lang);
+        updateActiveLangBtn(lang);
       }
       function closeMenu() {
         if (!nav || !toggle) return;
