@@ -1412,26 +1412,32 @@
   </script>
 
   <script>
-    /* Fallback ES → FR : si un parent contient du [data-lang="fr"] mais pas de [data-lang="es"],
-       on laisse le CSS gérer via la classe .no-es ajoutée ici au chargement */
+    /* Fallback ES → FR/EN : affiche le FR (ou EN si pas de FR) quand pas de traduction ES disponible.
+       Respecte display:block vs inline selon le tag natif de l'élément. */
     (function() {
-      function applyEsFallback() {
-        if (document.documentElement.classList.contains('lang-es')) {
-          document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
-            var parent = frEl.parentElement;
-            if (parent && !parent.querySelector('[data-lang="es"]')) {
-              frEl.style.display = 'inline';
-            } else {
-              frEl.style.display = '';
-            }
-          });
-        } else {
-          // Reset any forced inline display when switching away from ES
-          document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
-            frEl.style.display = '';
-          });
-        }
+      var BLOCK_TAGS = {'DIV':1,'SECTION':1,'ARTICLE':1,'ASIDE':1,'LI':1,'TD':1,'TH':1,'FIGURE':1,'FIGCAPTION':1};
+
+      function naturalDisplay(el) {
+        return BLOCK_TAGS[el.tagName] ? 'block' : 'inline';
       }
+
+      function applyEsFallback() {
+        var isEs = document.documentElement.classList.contains('lang-es');
+        document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
+          frEl.style.display = '';
+        });
+        if (!isEs) return;
+
+        document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
+          var parent = frEl.parentElement;
+          if (!parent) return;
+          var hasEs = parent.querySelector('[data-lang="es"]');
+          if (!hasEs) {
+            frEl.style.display = naturalDisplay(frEl);
+          }
+        });
+      }
+
       document.addEventListener('DOMContentLoaded', applyEsFallback);
       new MutationObserver(function(mutations) {
         mutations.forEach(function(m) {
