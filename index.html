@@ -830,7 +830,7 @@
 
   <main class="wrap">
     <section class="hero">
-      <div class="hero-grid">
+      <div class="hero-grid" style="grid-template-columns:1fr;">
         <div class="panel">
           <div class="hero-copy">
             <div class="eyebrow">
@@ -838,63 +838,60 @@
               <span data-lang="en">Modular innovation • Software • Construction • Mobility</span>
               <span data-lang="es">Innovación modular • Software • Construcción • Movilidad</span>
             </div>
-
             <h1>
               <span data-lang="fr">Une plateforme résidentielle intégrée, conçue pour être déployée à grande échelle.</span>
               <span data-lang="en">An integrated residential platform designed for large-scale deployment.</span>
+              <span data-lang="es">Una plataforma residencial integrada, diseñada para desplegarse a gran escala.</span>
             </h1>
-
             <div class="actions">
               <a class="btn primary" href="https://cohabitat.modulimo.com/" target="_blank" rel="noopener">
                 <span data-lang="fr">Voir la démo logicielle</span>
                 <span data-lang="en">View software demo</span>
+                <span data-lang="es">Ver la demo</span>
               </a>
               <a class="btn" href="#lab">
-                <span data-lang="fr">Explorer l’innovation</span>
+                <span data-lang="fr">Explorer l'innovation</span>
                 <span data-lang="en">Explore innovation</span>
                 <span data-lang="es">Explorar innovación</span>
               </a>
             </div>
           </div>
         </div>
-
-        <div class="panel hero-media-app">
-          <iframe
-            src="https://cohabitat.modulimo.com/"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-
-
-        </div>
       </div>
-        <section class="block" id="commercialises">
+    </section>
+
+    <section class="block" id="commercialises">
       <div class="section-banner">
         <span class="banner-label">01</span>
         <h2><span data-lang="fr">Produits commercialisés</span><span data-lang="en">Available products</span><span data-lang="es">Productos disponibles</span></h2>
       </div>
-      <div class="panel card-pad" style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
-        <div style="flex:1.2;min-width:260px;">
-          <div class="smallcaps"><span data-lang="fr">Pilier 01 — Plateforme opérationnelle</span><span data-lang="en">Pillar 01 — Operational platform</span><span data-lang="es">Pilar 01 — Plataforma operacional</span></div>
-          <h2 class="section-title"><span data-lang="fr">Plateforme logicielle déjà accessible</span><span data-lang="en">Software platform already accessible</span><span data-lang="es">Plataforma de software ya disponible</span></h2>
-          <p class="section-text">
-            <span data-lang="fr">Cohabitat est la première brique opérationnelle de l'écosystème MODULIMO — gestion résidentielle, ressources partagées, coordination du milieu de vie. Une preuve d'exécution concrète.</span>
-            <span data-lang="en">Cohabitat is the first operational layer of the MODULIMO ecosystem — residential management, shared resources, living environment coordination. A concrete proof of execution.</span>
-            <span data-lang="es">Cohabitat es la primera capa operacional del ecosistema MODULIMO — gestión residencial, recursos compartidos, coordinación del entorno de vida. Una prueba concreta de ejecución.</span>
-          </p>
-          <a class="btn primary" href="https://cohabitat.modulimo.com/" target="_blank" rel="noopener" style="margin-top:16px;display:inline-flex;">
-            <span data-lang="fr">Accéder à la démo</span><span data-lang="en">Access the demo</span><span data-lang="es">Acceder a la demo</span>
+      <div class="panel card-pad">
+        <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+          <div style="flex:1;min-width:220px;">
+            <div class="smallcaps"><span data-lang="fr">Valeur stratégique</span><span data-lang="en">Strategic value</span><span data-lang="es">Valor estratégico</span></div>
+            <h2 class="section-title"><span data-lang="fr">Plateforme logicielle déjà accessible</span><span data-lang="en">Software platform already accessible</span><span data-lang="es">Plataforma de software ya disponible</span></h2>
+            <p class="section-text">
+              <span data-lang="fr">Cohabitat est la première brique opérationnelle de l'écosystème MODULIMO — gestion résidentielle, ressources partagées, coordination du milieu de vie. Une preuve d'exécution concrète.</span>
+              <span data-lang="en">Cohabitat is the first operational layer of the MODULIMO ecosystem — residential management, shared resources, living environment coordination. A concrete proof of execution.</span>
+              <span data-lang="es">Cohabitat es la primera capa operacional del ecosistema MODULIMO — gestión residencial, recursos compartidos, coordinación del entorno de vida. Una prueba concreta de ejecución.</span>
+            </p>
+            <p class="section-text" style="margin-top:12px;">
+              <span data-lang="fr">Pour des investisseurs sérieux, la présence d'une démo accessible change le niveau de crédibilité. Une composante opérationnelle existe déjà et démontre la capacité de matérialisation.</span>
+              <span data-lang="en">For serious investors, an accessible demo materially changes credibility. An operational component already exists and demonstrates execution capability.</span>
+              <span data-lang="es">Para inversores serios, una demo accesible cambia la credibilidad. Ya existe un componente operacional que demuestra capacidad de ejecución.</span>
+            </p>
+            <a class="btn primary" href="https://cohabitat.modulimo.com/" target="_blank" rel="noopener" style="margin-top:20px;display:inline-flex;">
+              <span data-lang="fr">Accéder à la démo</span><span data-lang="en">Access the demo</span><span data-lang="es">Acceder a la demo</span>
+            </a>
+          </div>
+          <a href="https://cohabitat.modulimo.com/" target="_blank" rel="noopener" style="flex:1.3;min-width:280px;display:block;border-radius:12px;overflow:hidden;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='scale(1.01)';this.style.boxShadow='0 8px 32px rgba(0,0,0,.5)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <div class="hero-media-app" style="min-height:340px;border-radius:12px;">
+              <iframe src="https://cohabitat.modulimo.com/" loading="lazy" tabindex="-1" style="pointer-events:none;" allowfullscreen></iframe>
+            </div>
           </a>
         </div>
-        <div style="flex:1;min-width:220px;">
-          <div class="smallcaps"><span data-lang="fr">Valeur stratégique</span><span data-lang="en">Strategic value</span><span data-lang="es">Valor estratégico</span></div>
-          <p class="section-text">
-            <span data-lang="fr">Pour des investisseurs sérieux, la présence d'une démo accessible change le niveau de crédibilité. Une composante opérationnelle existe déjà et démontre la capacité de matérialisation.</span>
-            <span data-lang="en">For serious investors, an accessible demo materially changes credibility. An operational component already exists and demonstrates execution capability.</span>
-            <span data-lang="es">Para inversores serios, una demo accesible cambia la credibilidad. Ya existe un componente operacional que demuestra capacidad de ejecución.</span>
-          </p>
-        </div>
       </div>
+    </section>
     </section>
 
     <section class="block" id="build">
